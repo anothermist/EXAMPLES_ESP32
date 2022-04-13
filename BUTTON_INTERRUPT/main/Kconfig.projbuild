@@ -6,16 +6,23 @@ menu "Example Configuration"
         default 8 if IDF_TARGET_ESP32C3 || IDF_TARGET_ESP32H2
         default 18 if IDF_TARGET_ESP32S2
         default 48 if IDF_TARGET_ESP32S3
-        default 2
+        default 5
         help
             GPIO number (IOxx) to blink on and off or the RMT signal for the addressable LED.
             Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.
 
-	config BUTTON_GPIO
-		int "Button GPIO number"
-		range 0 48
-		default 4
-		help
-			GPIO number Button
-		
+    config BUTTON_GPIO_1
+        int "Button GPIO1 number"
+        range 0 48
+        default 4
+        help
+            GPIO number Button 1.
+
+    config BUTTON_GPIO_2
+        int "Button GPIO2 number"
+        range 0 48
+        default 5
+        help
+            GPIO number Button 2.
+
 endmenu
